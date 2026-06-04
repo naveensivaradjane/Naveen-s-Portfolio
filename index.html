@@ -2,404 +2,626 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
-  <meta name="theme-color" content="#020408"/>
-  <meta name="description" content="Naveen S — Cyber Security Learner, Full Stack Intern & MCA Student. Puducherry, India."/>
-  <title>Naveen S — Cyber Security Learner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Naveen S — Full Stack Developer | MCA 2026 | Pondicherry, India"/>
+  <title>Naveen S — Full Stack Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="css/style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <div id="cglow"></div>
 
-  <!-- NAV -->
-  <nav class="bar" id="nbar">
-    <div class="logo">NAVEEN<span class="logo-dot">.</span></div>
-    <div class="nlinks">
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#skills">Skills</a>
-      <a href="#edu">Education</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <a href="#contact" class="ncta">Hire Me</a>
-    <button class="burg" id="burg" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-  <div class="mob" id="mob" aria-modal="true">
-    <div class="mob-in">
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#skills">Skills</a>
-      <a href="#edu">Education</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div id="prog"></div>
+<canvas id="particles"></canvas>
+<button id="btt" aria-label="Back to top">BACK TO TOP ↑</button>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="h-bg">
-      <div class="h-mesh"></div>
-      <div class="h-grid"></div>
-      <div class="h-scan"></div>
-    </div>
-    <div class="h-pts" id="hpts" aria-hidden="true"></div>
-    <div class="w">
-      <div class="h-inner">
-        <div class="h-text">
-          <div class="h-badge"><div class="bdot"></div>Actively Learning &mdash; Cyber Security 2025</div>
-          <h1 class="h-title">CYBER<br><span class="ol">SECURITY</span><span class="tc">LEARNER</span></h1>
-          <div class="h-sub"><span>// Full Stack Intern &middot; Web Dev &middot; MCA &rsquo;26</span></div>
-          <p class="h-desc">I&apos;m <strong>Naveen S</strong> &mdash; a cyber security learner and full stack intern at <strong>Viyashra Group of Companies</strong>, Puducherry. Building secure web experiences while mastering offensive &amp; defensive security.</p>
-          <div class="h-btns">
-            <a href="#work" class="btn btn-c">View Projects <span class="bi">&#8595;</span></a>
-            <a href="#contact" class="btn btn-p">Get In Touch</a>
-          </div>
-          <div class="h-stats">
-            <div class="hst"><span class="hst-n tc">4</span><span class="hst-l">Projects Built</span></div>
-            <div class="hst-div"></div>
-            <div class="hst"><span class="hst-n tp">74%</span><span class="hst-l">TCS NQT Score</span></div>
-            <div class="hst-div"></div>
-            <div class="hst"><span class="hst-n tg">3+</span><span class="hst-l">Months Intern</span></div>
-          </div>
-        </div>
-        <div class="h-photo">
-          <div class="photo-rings"><div class="pr1"></div><div class="pr2"></div><div class="pr3"></div></div>
-          <div class="p-glow"></div>
-          <div class="p-circle">
-            <div class="p-avatar">NS</div>
-          </div>
-          <div class="fc fc1"><div class="fc-l">Location</div><div class="fc-v" style="color:#00f5d4">Puducherry, IN</div></div>
-          <div class="fc fc2"><div class="fc-l">TCS NQT</div><div class="fc-v" style="color:#ff2d78">74% Score</div></div>
-          <div class="fc fc3"><div class="fc-l">Status</div><div class="fc-v" style="color:#a855f7">Intern 2026</div></div>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-ind" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>Scroll
-    </div>
-  </section>
+<!-- Mobile burger -->
+<button class="mob-burger" id="burger" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
 
-  <!-- TICKER -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ttrack" id="ttrack">
-      <span class="titem">&#128737;&#65039; Cyber Security <span class="tsep"></span></span>
-      <span class="titem">&#128274; Ethical Hacking <span class="tsep"></span></span>
-      <span class="titem">&#128268; Network Security <span class="tsep"></span></span>
-      <span class="titem">&#9889; JavaScript <span class="tsep"></span></span>
-      <span class="titem">&#128038; React.js <span class="tsep"></span></span>
-      <span class="titem">&#128020; Node.js <span class="tsep"></span></span>
-      <span class="titem">&#128013; Python <span class="tsep"></span></span>
-      <span class="titem">&#128039; Linux <span class="tsep"></span></span>
-      <span class="titem">&#9729;&#65039; AWS Cloud <span class="tsep"></span></span>
-      <span class="titem">&#128451;&#65039; DBMS / SQL <span class="tsep"></span></span>
-      <span class="titem">&#127760; CCNA Networking <span class="tsep"></span></span>
+<!-- Mobile overlay -->
+<div class="mob-overlay" id="mob-overlay">
+  <a href="#home"           class="mob-link">Home</a>
+  <a href="#about-anchor"   class="mob-link">About</a>
+  <a href="#experience"     class="mob-link">Experience</a>
+  <a href="#projects"       class="mob-link">Projects</a>
+  <a href="#skills"         class="mob-link">Skills</a>
+  <a href="#education"      class="mob-link">Education</a>
+  <a href="#certifications" class="mob-link">Certifications</a>
+  <a href="#contact"        class="mob-link">Contact</a>
+</div>
+
+<!-- ═══════════════════ TOP NAVBAR ═══════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="#home" class="nav-logo">
+      <div class="nav-logo-box">N</div>
+      <span>NAVEEN<span class="nav-logo-dot">.</span></span>
+    </a>
+
+    <!-- Nav links -->
+    <div class="nav-links">
+      <a href="#home"           class="nav-link active">HOME</a>
+      <a href="#about-anchor"   class="nav-link">ABOUT</a>
+      <a href="#experience"     class="nav-link">WORK</a>
+      <a href="#projects"       class="nav-link">PROJECTS</a>
+      <a href="#skills"         class="nav-link">SKILLS</a>
+      <a href="#contact"        class="nav-link">CONTACT</a>
+    </div>
+
+    <!-- Right side -->
+    <div class="nav-right">
+      <div class="nav-tag"><span>//</span> BASED IN PONDICHERRY</div>
+      <a href="#contact" class="nav-cta">LET'S TALK <i class="fas fa-arrow-right"></i></a>
     </div>
   </div>
+</nav>
 
-  <!-- ABOUT -->
-  <div class="sep"></div>
-  <section id="about" class="sec">
-    <div class="about-bg"></div>
-    <div class="w">
-      <div class="agrid">
-        <div class="about-panel">
-          <div class="ap-title">Quick Profile</div>
-          <div class="learn-block">
-            <div class="lb-top"><div class="lb-dot"></div><div class="lb-label">Currently Learning</div></div>
-            <div class="lb-title">&#128737;&#65039; Cyber Security</div>
-            <div class="lb-desc">Actively exploring ethical hacking, penetration testing, network security, OWASP Top&nbsp;10 and defensive security techniques.</div>
+<!-- ═══════════════════ MAIN ═══════════════════ -->
+<div class="main">
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section id="home">
+    <div class="hero-amb"></div>
+    <div class="hero-grid-lines"></div>
+
+    <!-- Section number -->
+    <div class="hero-sec-num">01</div>
+
+    <!-- LEFT -->
+    <div class="hero-left">
+      <div class="hero-pill">
+        <span class="hero-pill-dot"></span>
+        Hi, I'm Naveen
+        <span class="hero-pill-arrow">›</span>
+      </div>
+
+      <h1 class="hero-h1">
+        <span class="line-white">I BUILD</span>
+        <span class="line-gold">DIGITAL</span>
+        <span class="line-outline">EXPERIENCES</span>
+        <span class="line-white">THAT MATTER</span>
+      </h1>
+
+      <p class="hero-sub">
+        Crafting <strong>scalable web applications</strong> with clean code,
+        modern tech and impactful design — currently interning at
+        <strong>Viyashra Group, Pondicherry</strong>.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#projects" class="btn-gold"><i class="fas fa-arrow-up-right-from-square"></i> View My Work</a>
+        <a href="NAVEEN_S_RESUME.pdf" download class="btn-outline">About Me</a>
+      </div>
+
+      <div class="hero-avail">
+        <div class="hero-avail-label">
+          <span class="avail-dot"></span>
+          Available for
+        </div>
+        <div class="hero-avail-chips">
+          <span class="avail-chip"><i class="fas fa-laptop-code"></i> Full Time</span>
+          <span class="avail-chip"><i class="fas fa-handshake"></i> Collaboration</span>
+          <span class="avail-chip"><i class="fas fa-location-dot"></i> Pondicherry, India</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CENTER — Photo -->
+    <div class="hero-center">
+      <div class="hero-photo-wrap">
+        <div class="hero-halo"></div>
+        <div class="hero-ring"></div>
+
+        <!-- Floating stat cards -->
+        <div class="hero-stats-col">
+          <div class="hstat">
+            <div class="hstat-n">8.76</div>
+            <div class="hstat-l">CGPA — MCA</div>
           </div>
-          <div class="ap-stats">
-            <div class="aps"><div class="aps-n tc">4</div><div class="aps-l">Projects</div></div>
-            <div class="aps"><div class="aps-n tp">74%</div><div class="aps-l">TCS NQT</div></div>
-            <div class="aps"><div class="aps-n tg">MCA</div><div class="aps-l">&rsquo;26</div></div>
-            <div class="aps"><div class="aps-n ty">3+</div><div class="aps-l">Mo. Intern</div></div>
+          <div class="hstat">
+            <div class="hstat-n">25+</div>
+            <div class="hstat-l">Projects Done</div>
           </div>
-          <div class="conn-lbl">Connect</div>
-          <div class="ext-links">
-            <a href="https://www.linkedin.com/in/naveens-583823281" target="_blank" rel="noopener" class="ext-a">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn &#8599;
-            </a>
-            <a href="mailto:naveensivaradjane@gmail.com" class="ext-a">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>Email
-            </a>
+          <div class="hstat">
+            <div class="hstat-n">6+</div>
+            <div class="hstat-l">Months Intern</div>
           </div>
         </div>
-        <div class="about-text">
-          <div class="lbl">01 &mdash; About Me</div>
-          <h2 class="ah">Breaking systems<br>to <span class="tc">defend</span> them.</h2>
-          <p>I&apos;m <strong>Naveen S</strong>, a motivated cyber security learner and MCA student at Sri Manakula Vinayagar Engineering College, Puducherry. Currently interning as a <strong>Web Development Intern at Viyashra Group of Companies</strong>, applying academic knowledge to real-world projects.</p>
-          <p>Certified in <strong>AWS Cloud Foundations</strong> from AWS Academy. Skilled in JavaScript, React.js and Node.js. Passionate about understanding both how to build secure systems and how attackers break them.</p>
-          <div class="chips">
-            <span class="chip">Cyber Security</span><span class="chip">Ethical Hacking</span>
-            <span class="chip">Network Security</span><span class="chip">JavaScript</span>
-            <span class="chip">React.js</span><span class="chip">Node.js</span>
-            <span class="chip">Python</span><span class="chip">AWS Cloud</span>
-            <span class="chip">Linux</span><span class="chip">DBMS</span>
+
+        <div class="hero-photo-frame">
+          <img src="photo.jpg" alt="Naveen S — Full Stack Developer"
+               onerror="this.onerror=null;this.style.minHeight='440px';this.style.background='linear-gradient(160deg,#111008,#0d0b07)';this.removeAttribute('src')"/>
+          <div class="hero-photo-overlay"></div>
+        </div>
+        <div class="hero-sig">Naveen S</div>
+      </div>
+    </div>
+
+    <!-- RIGHT — Stats + Code -->
+    <div class="hero-right">
+      <div class="stat-card">
+        <div class="stat-icon">🏆</div>
+        <div><div class="stat-n">25+</div><div class="stat-l">Projects Completed</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">💼</div>
+        <div><div class="stat-n">6+</div><div class="stat-l">Months Internship</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⚙️</div>
+        <div><div class="stat-n">15+</div><div class="stat-l">Technologies</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🎓</div>
+        <div><div class="stat-n">8.76</div><div class="stat-l">CGPA (MCA)</div></div>
+      </div>
+      <!-- Code snippet -->
+      <div class="hero-code">
+        <div class="cc-bar">
+          <span class="cc-dot r"></span><span class="cc-dot y"></span><span class="cc-dot g"></span>
+          <span class="cc-x">✕</span>
+        </div>
+        <pre><span class="ck">const</span> developer = {
+  name:    <span class="cs">"Naveen S"</span>,
+  role:    <span class="cs">"Full Stack Dev"</span>,
+  passion: <span class="cv">"Building products
+           that help people"</span>
+};</pre>
+      </div>
+    </div>
+
+    <!-- BOTTOM — About + Tech Stack -->
+    <div class="hero-bottom" id="about-anchor">
+      <!-- About -->
+      <div class="hero-about">
+        <div class="hero-about-ttl"><i class="fas fa-chart-line"></i> About Me</div>
+        <p>I'm a passionate <strong>Full Stack Developer</strong> who loves turning ideas into real-world solutions. I enjoy building efficient, scalable and user-focused applications.</p>
+        <p>From designing intuitive frontends to developing robust backends and databases, I focus on writing <strong>clean code</strong> and delivering impactful digital products.</p>
+        <a href="#experience" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="hero-tech">
+        <div class="hero-tech-ttl"><i class="fas fa-layer-group"></i> Tech Stack</div>
+        <div class="tech-cols">
+          <div>
+            <div class="tech-group-head">Frontend</div>
+            <div class="tech-chips">
+              <span class="tech-chip"><i class="fab fa-react"></i> React.js</span>
+              <span class="tech-chip"><i class="fab fa-html5"></i> HTML5</span>
+              <span class="tech-chip"><i class="fab fa-css3-alt"></i> CSS3</span>
+              <span class="tech-chip"><i class="fab fa-js"></i> JavaScript</span>
+            </div>
           </div>
-          <a href="#contact" class="btn btn-c btn-sm">Get in Touch <span class="bi">&#8594;</span></a>
+          <div>
+            <div class="tech-group-head">Backend</div>
+            <div class="tech-chips">
+              <span class="tech-chip"><i class="fab fa-node-js"></i> Node.js</span>
+              <span class="tech-chip">Exe Express.js</span>
+              <span class="tech-chip"><i class="fab fa-php"></i> PHP</span>
+            </div>
+            <div class="tech-group-head" style="margin-top:.65rem">Databases</div>
+            <div class="tech-chips">
+              <span class="tech-chip">🍃 MongoDB</span>
+              <span class="tech-chip">🗄️ MySQL</span>
+            </div>
+          </div>
+          <div>
+            <div class="tech-group-head">Tools</div>
+            <div class="tech-chips">
+              <span class="tech-chip"><i class="fab fa-git-alt"></i> Git</span>
+              <span class="tech-chip"><i class="fab fa-github"></i> GitHub</span>
+              <span class="tech-chip">📊 NumPy</span>
+            </div>
+            <div class="tech-group-head" style="margin-top:.65rem">Other Skills</div>
+            <div class="oskills">
+              <span class="osk">Excel</span><span class="osk">PowerPoint</span>
+              <span class="osk">Word</span><span class="osk">CCNA</span><span class="osk">CEH Basics</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WORK — Horizontal Scroll -->
-  <div class="sep"></div>
-  <section id="work" class="sec">
-    <div class="w">
-      <div class="sc">
-        <div class="lbl">02 &mdash; Projects</div>
-        <h2 class="sh">Selected <span class="tc">Work</span></h2>
-        <p class="sd">Four real projects built from scratch — each solving a genuine problem.</p>
+  <div class="div-line"></div>
+
+  <!-- ═══════════ EXPERIENCE ═══════════ -->
+  <section id="experience" class="section section-alt">
+    <div class="sec-inner">
+      <div class="sec-hdr reveal">
+        <div class="sec-label">Experience</div>
+        <h2 class="sec-title">Where I've <span class="g">Worked.</span></h2>
       </div>
-    </div>
-    <div class="proj-scroll-wrap">
-      <div class="proj-track" id="projTrack">
-
-        <!-- Card 1 -->
-        <article class="pcard pcard-feat">
-          <div class="pcard-thumb">
-            <div class="pcard-thumb-inner p1-bg">
-              <div class="p-mockup">
-                <div class="pm-bar"><span class="pm-dot r"></span><span class="pm-dot y"></span><span class="pm-dot g"></span><span class="pm-title">Student Lifecycle Portal</span></div>
-                <div class="pm-body">
-                  <div class="pm-stat"><span class="pm-sn" style="color:#00f5d4">342</span><span class="pm-sl">Enrolled</span></div>
-                  <div class="pm-stat"><span class="pm-sn" style="color:#a855f7">89%</span><span class="pm-sl">Progress</span></div>
-                  <div class="pm-stat"><span class="pm-sn" style="color:#ff2d78">12</span><span class="pm-sl">Pending</span></div>
-                  <div class="pm-stat"><span class="pm-sn" style="color:#ffd60a">7</span><span class="pm-sl">Alerts</span></div>
-                  <div class="pm-chart">
-                    <div class="pm-bar-wrap">
-                      <div class="pm-bitem" style="height:55%"></div>
-                      <div class="pm-bitem" style="height:70%"></div>
-                      <div class="pm-bitem" style="height:45%"></div>
-                      <div class="pm-bitem" style="height:80%"></div>
-                      <div class="pm-bitem" style="height:65%"></div>
-                      <div class="pm-bitem" style="height:90%"></div>
-                      <div class="pm-bitem" style="height:75%"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="feat-badge">&#11088; Featured</div>
-          </div>
-          <div class="pcard-body">
-            <div class="wno">// 01</div>
-            <div class="wtags"><span class="wtag">Web Portal</span><span class="wtag">Dashboard</span><span class="wtag">DBMS</span></div>
-            <h3 class="wt">Student Lifecycle Management Portal</h3>
-            <p class="wd">Web-based system managing student journey from admission to graduation. Centralises academic records, performance tracking and document management through a dual-role admin &amp; student dashboard.</p>
-            <div class="wpills">
-              <span class="wpt" style="background:rgba(0,245,212,.09);border-color:rgba(0,245,212,.3);color:#00f5d4">Records</span>
-              <span class="wpt" style="background:rgba(168,85,247,.08);border-color:rgba(168,85,247,.28);color:#c084fc">Analytics</span>
-              <span class="wpt" style="background:rgba(255,45,120,.08);border-color:rgba(255,45,120,.28);color:#fb7185">Dual Role</span>
-            </div>
-            <div class="wfoot"><span class="wlnk">View Project &#8594;</span><span class="wyr">2024</span></div>
-          </div>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="pcard">
-          <div class="pcard-thumb">
-            <div class="pcard-thumb-inner p2-bg">
-              <div class="p-mockup">
-                <div class="pm-bar"><span class="pm-dot r"></span><span class="pm-dot y"></span><span class="pm-dot g"></span><span class="pm-title">School Management System</span></div>
-                <div class="pm-body">
-                  <div class="pm-stat"><span class="pm-sn" style="color:#00f5d4">1,204</span><span class="pm-sl">Students</span></div>
-                  <div class="pm-stat"><span class="pm-sn" style="color:#a855f7">48</span><span class="pm-sl">Classes</span></div>
-                  <div class="pm-stat"><span class="pm-sn" style="color:#00ff88">96.2%</span><span class="pm-sl">Attend.</span></div>
-                  <div class="pm-stat"><span class="pm-sn" style="color:#ffd60a">84</span><span class="pm-sl">Staff</span></div>
-                  <div class="pm-rows">
-                    <div class="pm-row"><span class="pm-rc" style="background:rgba(0,245,212,.3)"></span><span class="pm-rn">X-A</span><div class="pm-rbar"><div style="width:95%"></div></div><span class="pm-rg">A+</span></div>
-                    <div class="pm-row"><span class="pm-rc" style="background:rgba(168,85,247,.3)"></span><span class="pm-rn">IX-B</span><div class="pm-rbar"><div style="width:78%"></div></div><span class="pm-rg">A</span></div>
-                    <div class="pm-row"><span class="pm-rc" style="background:rgba(255,45,120,.3)"></span><span class="pm-rn">XI-C</span><div class="pm-rbar"><div style="width:86%"></div></div><span class="pm-rg">B+</span></div>
-                    <div class="pm-row"><span class="pm-rc" style="background:rgba(255,214,10,.3)"></span><span class="pm-rn">VIII</span><div class="pm-rbar"><div style="width:72%"></div></div><span class="pm-rg">A-</span></div>
-                  </div>
-                </div>
-              </div>
+      <div class="exp-layout">
+        <div class="exp-globe-wrap reveal">
+          <div class="exp-globe">
+            <div class="exp-globe-inner">
+              <div class="exp-globe-icon">💼</div>
+              <div class="exp-globe-co">Viyashra<br>Group</div>
+              <div class="exp-globe-p">Jan 2026 – Present</div>
             </div>
           </div>
-          <div class="pcard-body">
-            <div class="wno">// 02</div>
-            <div class="wtags"><span class="wtag">DBMS</span><span class="wtag">Web</span><span class="wtag">Admin</span></div>
-            <h3 class="wt">School Management System</h3>
-            <p class="wd">Full school operations platform covering student registration, attendance, academic calendar, grade management and staff administration with real-time analytics.</p>
-            <div class="wpills">
-              <span class="wpt" style="background:rgba(0,245,212,.08);border-color:rgba(0,245,212,.25);color:#67e8f9">Attendance</span>
-              <span class="wpt" style="background:rgba(0,255,136,.08);border-color:rgba(0,255,136,.25);color:#6ee7b7">Grades</span>
-            </div>
-            <div class="wfoot"><span class="wlnk">View Project &#8594;</span><span class="wyr">2023</span></div>
+          <div class="exp-tags-right">
+            <span class="exp-tag">REACT.JS</span>
+            <span class="exp-tag">NODE.JS</span>
+            <span class="exp-tag">PHP</span>
+            <span class="exp-tag">MYSQL</span>
+            <span class="exp-tag">REST APIs</span>
           </div>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="pcard pcard-pink">
-          <div class="pcard-thumb">
-            <div class="pcard-thumb-inner p3-bg">
-              <div class="p-mockup">
-                <div class="pm-bar"><span class="pm-dot r"></span><span class="pm-dot y"></span><span class="pm-dot g"></span><span class="pm-title">E-Tailoring System</span></div>
-                <div class="pm-body">
-                  <div class="pm-stat"><span class="pm-sn" style="color:#ff2d78">28</span><span class="pm-sl">New Orders</span></div>
-                  <div class="pm-stat"><span class="pm-sn" style="color:#a855f7">14</span><span class="pm-sl">Stitching</span></div>
-                  <div class="pm-stat"><span class="pm-sn" style="color:#00f5d4">156</span><span class="pm-sl">Delivered</span></div>
-                  <div class="pm-orders">
-                    <div class="pm-order"><span class="pm-oid">#ET-2401</span><span class="pm-ocust">Priya R.</span><span class="pm-obadge" style="color:#00ff88;border-color:rgba(0,255,136,.4)">READY</span></div>
-                    <div class="pm-order"><span class="pm-oid">#ET-2402</span><span class="pm-ocust">Kavya M.</span><span class="pm-obadge" style="color:#ffd60a;border-color:rgba(255,214,10,.4)">STITCH</span></div>
-                    <div class="pm-order"><span class="pm-oid">#ET-2403</span><span class="pm-ocust">Divya S.</span><span class="pm-obadge" style="color:#a855f7;border-color:rgba(168,85,247,.4)">CUT</span></div>
-                    <div class="pm-order"><span class="pm-oid">#ET-2404</span><span class="pm-ocust">Meena K.</span><span class="pm-obadge" style="color:#ff2d78;border-color:rgba(255,45,120,.4)">PENDING</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="pcard-body">
-            <div class="wno">// 03</div>
-            <div class="wtags"><span class="wtag">Full Stack</span><span class="wtag">HTML/CSS/JS</span></div>
-            <h3 class="wt">E-Tailoring Management System</h3>
-            <p class="wd">Web platform where customers place tailoring orders online, track status, submit measurements digitally and communicate with tailors in real time. Digitises shop operations end-to-end.</p>
-            <div class="wpills">
-              <span class="wpt" style="background:rgba(255,45,120,.08);border-color:rgba(255,45,120,.28);color:#fb7185">Orders</span>
-              <span class="wpt" style="background:rgba(168,85,247,.08);border-color:rgba(168,85,247,.28);color:#c084fc">Real-time</span>
-            </div>
-            <div class="wfoot"><span class="wlnk">View Project &#8594;</span><span class="wyr">2024</span></div>
-          </div>
-        </article>
-
-        <!-- Card 4 -->
-        <article class="pcard pcard-blue">
-          <div class="pcard-thumb">
-            <div class="pcard-thumb-inner p4-bg">
-              <div class="p-mockup">
-                <div class="pm-bar"><span class="pm-dot r"></span><span class="pm-dot y"></span><span class="pm-dot g"></span><span class="pm-title">Medicine Reminder App</span></div>
-                <div class="pm-body">
-                  <div class="pm-stat"><span class="pm-sn" style="color:#00f5d4">98%</span><span class="pm-sl">Adherence</span></div>
-                  <div class="pm-stat"><span class="pm-sn" style="color:#a855f7">3</span><span class="pm-sl">Daily Doses</span></div>
-                  <div class="pm-stat"><span class="pm-sn" style="color:#ff2d78">12</span><span class="pm-sl">Patients</span></div>
-                  <div class="pm-meds">
-                    <div class="pm-med"><span class="pm-mtime">08:00 AM</span><span class="pm-mname">Vitamin D · 1 tab</span><span class="pm-mcheck" style="color:#00ff88">&#10003;</span></div>
-                    <div class="pm-med"><span class="pm-mtime">02:00 PM</span><span class="pm-mname">Metformin · 2 tabs</span><span class="pm-mcheck" style="color:#ffd60a">&#9679;</span></div>
-                    <div class="pm-med"><span class="pm-mtime">09:00 PM</span><span class="pm-mname">Aspirin · 1 tab</span><span class="pm-mcheck" style="color:#586480">&#9679;</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="pcard-body">
-            <div class="wno">// 04</div>
-            <div class="wtags"><span class="wtag">Android</span><span class="wtag">Java</span><span class="wtag">Mobile</span></div>
-            <h3 class="wt">Medicine Time Reminder App</h3>
-            <p class="wd">Android app sending timed reminders to patients, helping elderly and chronically ill users maintain consistent medication routines with adherence tracking &amp; caregiver notifications.</p>
-            <div class="wpills">
-              <span class="wpt" style="background:rgba(14,165,233,.08);border-color:rgba(14,165,233,.28);color:#7dd3fc">Alerts</span>
-              <span class="wpt" style="background:rgba(0,255,136,.08);border-color:rgba(0,255,136,.28);color:#6ee7b7">Tracking</span>
-            </div>
-            <div class="wfoot"><span class="wlnk">View Project &#8594;</span><span class="wyr">2023</span></div>
-          </div>
-        </article>
-
-      </div><!-- end proj-track -->
-      <!-- Scroll arrows -->
-      <button class="proj-arrow proj-arrow-l" id="projLeft" aria-label="Scroll left">&#8592;</button>
-      <button class="proj-arrow proj-arrow-r" id="projRight" aria-label="Scroll right">&#8594;</button>
-    </div>
-    <!-- Dots -->
-    <div class="proj-dots" id="projDots">
-      <button class="pdot active" data-idx="0"></button>
-      <button class="pdot" data-idx="1"></button>
-      <button class="pdot" data-idx="2"></button>
-      <button class="pdot" data-idx="3"></button>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <div class="sep"></div>
-  <section id="skills" class="sec">
-    <div class="w">
-      <div class="skgrid">
-        <div class="sk-intro">
-          <div class="lbl">03 &mdash; Skills</div>
-          <h2 class="sh">What I<br><span class="tc">Know.</span></h2>
-          <p class="sd" style="margin-top:.9rem">Security tools, full-stack web and cloud — built through real projects &amp; self-study.</p>
-          <div style="margin-top:1.8rem"><a href="#contact" class="btn btn-o btn-sm">Collaborate &#8594;</a></div>
         </div>
-        <div class="sklist">
-          <div class="ski" style="--w:82%"><span class="skrank">01</span><div class="skico">&#128737;&#65039;</div><div class="skinfo"><div class="sknm">Cyber Security &amp; Ethical Hacking</div><div class="sktr"><div class="skfi"></div></div></div><span class="skpct tp">82%</span></div>
-          <div class="ski" style="--w:85%"><span class="skrank">02</span><div class="skico">&#9889;</div><div class="skinfo"><div class="sknm">HTML5 / CSS3 / JavaScript</div><div class="sktr"><div class="skfi"></div></div></div><span class="skpct tc">85%</span></div>
-          <div class="ski" style="--w:80%"><span class="skrank">03</span><div class="skico">&#128038;</div><div class="skinfo"><div class="sknm">Computer Fundamentals</div><div class="sktr"><div class="skfi"></div></div></div><span class="skpct tc">80%</span></div>
-          <div class="ski" style="--w:75%"><span class="skrank">04</span><div class="skico">&#128013;</div><div class="skinfo"><div class="sknm">Python</div><div class="sktr"><div class="skfi"></div></div></div><span class="skpct tg">75%</span></div>
-          <div class="ski" style="--w:30%"><span class="skrank">05</span><div class="skico">&#9729;&#65039;</div><div class="skinfo"><div class="sknm">AWS Cloud Foundations</div><div class="sktr"><div class="skfi"></div></div></div><span class="skpct tg">30%</span></div>
-          <div class="ski" style="--w:72%"><span class="skrank">06</span><div class="skico">&#128039;</div><div class="skinfo"><div class="sknm">Linux &amp; CCNA Networking</div><div class="sktr"><div class="skfi"></div></div></div><span class="skpct tg">72%</span></div>
+        <div class="exp-card reveal" style="transition-delay:.15s">
+          <div class="exp-card-top">
+            <div>
+              <div class="exp-role">// Software Developer Intern</div>
+              <div class="exp-co">Viyashra Group</div>
+              <div class="exp-period">January 2026 – Present &bull; Pondicherry, India</div>
+            </div>
+            <span class="exp-badge-active">Active</span>
+          </div>
+          <div class="exp-bullets">
+            <div class="exp-bullet">Contributed to end-to-end development of two live platforms: an Immigration Portal and an AI-assisted HRMS application.</div>
+            <div class="exp-bullet">Developed frontend modules using React.js and backend APIs using Node.js, Express.js, PHP and MySQL.</div>
+            <div class="exp-bullet">Implemented authentication systems, role-based access control, database integration and responsive user interfaces.</div>
+            <div class="exp-bullet">Collaborated with designers, backend developers and QA teams in an Agile environment to deliver production features on time.</div>
+            <div class="exp-bullet">Worked on REST API integration, real-time functionality and scalable database design for enterprise-level applications.</div>
+          </div>
+          <div class="exp-pills">
+            <span class="exp-pill">React.js</span><span class="exp-pill">Node.js</span><span class="exp-pill">Express.js</span>
+            <span class="exp-pill">PHP</span><span class="exp-pill">MySQL</span><span class="exp-pill">REST APIs</span>
+            <span class="exp-pill">JWT Auth</span><span class="exp-pill">Agile</span>
+          </div>
         </div>
       </div>
-      <div class="techg">
-        <div class="tech">Nmap</div><div class="tech">Wireshark</div><div class="tech">Metasploit</div>
-        <div class="tech">Burp Suite</div><div class="tech">Kali Linux</div><div class="tech">OWASP Top 10</div>
-        <div class="tech">CCNA / TCP-IP</div><div class="tech">AWS Academy</div><div class="tech">React.js</div>
-        <div class="tech">Node.js</div><div class="tech">DBMS / SQL</div><div class="tech">OSI Model</div>
+    </div>
+  </section>
+
+  <div class="div-line"></div>
+
+  <!-- ═══════════ PROJECTS ═══════════ -->
+  <section id="projects" class="section">
+    <div class="sec-inner" style="max-width:100%">
+      <div class="sec-hdr reveal">
+        <div class="sec-label">Featured Projects</div>
+        <h2 class="sec-title">Things I've <span class="g">Built.</span></h2>
+        <a href="#" class="sec-view-all">VIEW ALL PROJECTS <i class="fas fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="projects-grid">
+
+        <!-- P1 -->
+        <div class="pj reveal" style="transition-delay:.05s">
+          <div class="pj-banner pj-bg1">
+            <div class="pj-banner-num">01</div>
+            <div class="pj-banner-ext"><i class="fas fa-arrow-up-right-from-square"></i></div>
+            <div class="pj-banner-icon">👥</div>
+            <div class="pj-type">MERN Stack</div>
+          </div>
+          <div class="pj-body">
+            <div class="pj-badges"><span class="pj-badge">MERN Stack</span><span class="pj-badge">Internship</span></div>
+            <div class="pj-title">People Pulse — Multi-Company HRMS Platform</div>
+            <div class="pj-desc">Scalable multi-tenant HRMS using MongoDB, Express.js, React.js and Node.js. RESTful APIs for employee management, attendance, performance. JWT auth and role-based access.</div>
+            <div class="pj-foot">
+              <div class="pj-stack"><span>React</span><span>Node.js</span><span>MongoDB</span><span>JWT</span></div>
+              <span class="pj-btn">VIEW CASE STUDY <i class="fas fa-arrow-up-right-from-square"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- P2 -->
+        <div class="pj reveal" style="transition-delay:.1s">
+          <div class="pj-banner pj-bg2">
+            <div class="pj-banner-num">02</div>
+            <div class="pj-banner-ext"><i class="fas fa-arrow-up-right-from-square"></i></div>
+            <div class="pj-banner-icon">🛂</div>
+            <div class="pj-type">PHP / MySQL</div>
+          </div>
+          <div class="pj-body">
+            <div class="pj-badges"><span class="pj-badge">PHP</span><span class="pj-badge">MySQL</span><span class="pj-badge">Internship</span></div>
+            <div class="pj-title">Student Portal — Immigration Management System</div>
+            <div class="pj-desc">Full-stack immigration portal with dashboard, document upload, KPI tracking and communication modules. Normalized MySQL schemas, role-based auth for admin, staff and student.</div>
+            <div class="pj-foot">
+              <div class="pj-stack"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Bootstrap</span></div>
+              <span class="pj-btn">VIEW CASE STUDY <i class="fas fa-arrow-up-right-from-square"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- P3 -->
+        <div class="pj reveal" style="transition-delay:.15s">
+          <div class="pj-banner pj-bg3">
+            <div class="pj-banner-num">03</div>
+            <div class="pj-banner-ext"><i class="fas fa-arrow-up-right-from-square"></i></div>
+            <div class="pj-banner-icon">✂️</div>
+            <div class="pj-type">PHP / MySQL / JS</div>
+          </div>
+          <div class="pj-body">
+            <div class="pj-badges"><span class="pj-badge">PHP</span><span class="pj-badge">MySQL</span><span class="pj-badge">JS</span></div>
+            <div class="pj-title">E-Tailoring Management System</div>
+            <div class="pj-desc">Complete tailoring order management platform with customer and admin modules. Optimized relational database with indexing, real-time order tracking and secure role-based authentication.</div>
+            <div class="pj-foot">
+              <div class="pj-stack"><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
+              <span class="pj-btn">VIEW CASE STUDY <i class="fas fa-arrow-up-right-from-square"></i></span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- EDUCATION -->
-  <div class="sep"></div>
-  <section id="edu" class="sec">
-    <div class="w">
-      <div class="sc"><div class="lbl">04 &mdash; Background</div><h2 class="sh">Education &amp; <span class="tp">Experience</span></h2></div>
-      <div class="edugrid">
-        <div class="ecard"><div class="etop"><span class="eico">&#127891;</span><div class="eper">Sep 2024 &mdash; Jun 2026</div><div class="etit">Master of Computer Applications</div><div class="einst">Sri Manakula Vinayagar Engineering College, Puducherry</div></div><div class="ebot"><span class="ebdg ec">Ongoing</span></div></div>
-        <div class="ecard"><div class="etop"><span class="eico">&#128218;</span><div class="eper">2018 &mdash; 2021</div><div class="etit">Bachelor of Computer Science</div><div class="einst">Sri Manakula Vinayagar Engineering College, Puducherry</div></div><div class="ebot"><span class="ebdg eg">Completed</span></div></div>
-        <div class="ecard"><div class="etop"><span class="eico">&#128188;</span><div class="eper">Jan 2026 &mdash; Present</div><div class="etit">Web Development Intern</div><div class="einst">Viyashra Group of Companies, Puducherry</div></div><div class="ebot"><span class="ebdg ei">Active &middot; 3&nbsp;Months</span></div></div>
+  <div class="div-line"></div>
+
+  <!-- ═══════════ ABOUT + EXPERTISE ═══════════ -->
+  <section id="about-section" class="section section-alt">
+    <div class="sec-inner about-expertise-layout">
+      <!-- About column -->
+      <div class="about-col reveal">
+        <div class="sec-label">About Me</div>
+        <h2 class="sec-title about-ttl">DEVELOPER.<br>BUILDER.<br><span class="g">PROBLEM SOLVER.</span></h2>
+        <p class="about-body">I'm Naveen S, a Full Stack Developer & Web Enthusiast who loves turning complex problems into beautifully simple, intuitive and impactful digital experiences.</p>
+        <a href="#contact" class="btn-outline-sm">MORE ABOUT ME <i class="fas fa-arrow-right"></i></a>
+        <div class="about-stats">
+          <div class="ab-stat"><span class="ab-n">15+</span><span class="ab-l">Happy Clients</span></div>
+          <div class="ab-stat"><span class="ab-n">25+</span><span class="ab-l">Projects Done</span></div>
+          <div class="ab-stat"><span class="ab-n">100+</span><span class="ab-l">Cups of Coffee</span></div>
+          <div class="ab-stat"><span class="ab-n">1</span><span class="ab-l">Mission: Impact</span></div>
+        </div>
       </div>
-      <div class="certh">Certifications</div>
-      <div class="certg">
-        <div class="cert"><div class="cico">&#9729;&#65039;</div><div><div class="cnm">AWS Cloud Foundations</div><div class="csub">AWS Academy Certified</div></div></div>
-        <div class="cert"><div class="cico">&#127942;</div><div><div class="cnm">TCS NQT</div><div class="csub">Score: 74%</div></div></div>
-        <div class="cert"><div class="cico">&#128274;</div><div><div class="cnm">National Cyber Security Workshop</div><div class="csub">January 2024</div></div></div>
-        <div class="cert"><div class="cico">&#128451;&#65039;</div><div><div class="cnm">Database Management System</div><div class="csub">NPTEL Certified</div></div></div>
-        <div class="cert"><div class="cico">&#128013;</div><div><div class="cnm">Python for Data Science</div><div class="csub">Certified</div></div></div>
+
+      <!-- Expertise column -->
+      <div class="expertise-col reveal" style="transition-delay:.1s">
+        <div class="sec-label">My Expertise</div>
+        <div class="expertise-grid">
+          <div class="exp-tile"><div class="exp-tile-ico"><i class="fas fa-pen-ruler"></i></div><div class="exp-tile-lbl">UI / UX<br>DESIGN</div></div>
+          <div class="exp-tile"><div class="exp-tile-ico"><i class="fas fa-globe"></i></div><div class="exp-tile-lbl">WEB<br>DESIGN</div></div>
+          <div class="exp-tile"><div class="exp-tile-ico"><i class="fas fa-mobile-screen"></i></div><div class="exp-tile-lbl">MOBILE<br>DESIGN</div></div>
+          <div class="exp-tile"><div class="exp-tile-ico"><i class="fas fa-layer-group"></i></div><div class="exp-tile-lbl">FULL<br>STACK</div></div>
+          <div class="exp-tile"><div class="exp-tile-ico"><i class="fas fa-database"></i></div><div class="exp-tile-lbl">DATABASE<br>DESIGN</div></div>
+          <div class="exp-tile"><div class="exp-tile-ico"><i class="fas fa-code-branch"></i></div><div class="exp-tile-lbl">API<br>DEVELOPMENT</div></div>
+        </div>
+        <div class="design-quote">
+          <span class="dq-open">"</span>
+          Good code is not just what it looks like. It's how it works.
+          <span class="dq-close">"</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <div class="sep"></div>
-  <section id="contact" class="sec">
-    <div class="w">
-      <div class="cta-box">
-        <div class="ctat">Let&apos;s Build Something<br><span class="tc">SECURE</span> Together</div>
-        <p class="ctad">Open to fresher roles in Cyber Security or Web Development. Let&apos;s connect!</p>
+  <div class="div-line"></div>
+
+  <!-- ═══════════ SKILLS ═══════════ -->
+  <section id="skills" class="section">
+    <div class="sec-inner">
+      <div class="sec-hdr reveal">
+        <div class="sec-label">Tech Stack</div>
+        <h2 class="sec-title">My <span class="g">Skills.</span></h2>
       </div>
-      <div class="cbody">
+      <div class="skills-layout">
+        <!-- Bars -->
         <div>
-          <div class="lbl">05 &mdash; Contact</div>
-          <h2 class="cit">Have an opportunity?<br><span class="tc">Let&apos;s talk.</span></h2>
-          <p class="cid">Reach out anytime — I reply within 24 hours. Open to roles in Cyber Security, Web Development or Cloud.</p>
-          <div class="clines">
-            <a href="mailto:naveensivaradjane@gmail.com" class="cln"><div class="clic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg></div><div><div class="cll">Email</div><div class="clv">naveensivaradjane@gmail.com</div></div></a>
-            <a href="https://www.linkedin.com/in/naveens-583823281" target="_blank" rel="noopener" class="cln"><div class="clic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div><div><div class="cll">LinkedIn</div><div class="clv">linkedin.com/in/naveens-583823281</div></div></a>
-            <div class="cln"><div class="clic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="cll">Location</div><div class="clv">Puducherry, India &mdash; Remote OK</div></div></div>
+          <div class="sk-group">
+            <div class="sk-group-title">Frontend</div>
+            <div class="skill-row reveal"><div class="skill-top"><span class="skill-name">HTML5 / CSS3</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill" style="--sw:92%"></div></div></div>
+            <div class="skill-row reveal"><div class="skill-top"><span class="skill-name">JavaScript</span><span class="skill-pct">78%</span></div><div class="skill-track"><div class="skill-fill" style="--sw:78%"></div></div></div>
+            <div class="skill-row reveal"><div class="skill-top"><span class="skill-name">React.js</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill" style="--sw:70%"></div></div></div>
           </div>
-          <div class="csocs">
-            <a href="https://www.linkedin.com/in/naveen-s-583823281/" target="_blank" rel="noopener" class="csoc">LinkedIn &#8599;</a>
-            <a href="mailto:naveensivaradjane@gmail.com" class="csoc">Email</a>
+          <div class="sk-group" style="margin-top:1.5rem">
+            <div class="sk-group-title">Backend</div>
+            <div class="skill-row reveal"><div class="skill-top"><span class="skill-name">PHP</span><span class="skill-pct">82%</span></div><div class="skill-track"><div class="skill-fill" style="--sw:82%"></div></div></div>
+            <div class="skill-row reveal"><div class="skill-top"><span class="skill-name">Node.js / Express</span><span class="skill-pct">72%</span></div><div class="skill-track"><div class="skill-fill" style="--sw:72%"></div></div></div>
+            <div class="skill-row reveal"><div class="skill-top"><span class="skill-name">Python</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" style="--sw:85%"></div></div></div>
+          </div>
+          <div class="sk-group" style="margin-top:1.5rem">
+            <div class="sk-group-title">Databases</div>
+            <div class="skill-row reveal"><div class="skill-top"><span class="skill-name">MySQL</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill" style="--sw:88%"></div></div></div>
+            <div class="skill-row reveal"><div class="skill-top"><span class="skill-name">MongoDB</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill" style="--sw:65%"></div></div></div>
           </div>
         </div>
-        <div>
+        <!-- Tiles -->
+        <div class="reveal" style="transition-delay:.2s">
+          <div class="sk-group-title">All Technologies</div>
+          <div class="tech-tile-grid">
+            <div class="tech-tile"><i class="fab fa-react" style="color:#61dafb"></i><span>React</span></div>
+            <div class="tech-tile"><i class="fab fa-node-js" style="color:#6cc24a"></i><span>Node.js</span></div>
+            <div class="tech-tile"><i class="fab fa-php" style="color:#8892be"></i><span>PHP</span></div>
+            <div class="tech-tile"><i class="fab fa-python" style="color:#4b8bbe"></i><span>Python</span></div>
+            <div class="tech-tile"><i class="fas fa-database" style="color:#e48e00"></i><span>MySQL</span></div>
+            <div class="tech-tile"><i class="fas fa-leaf" style="color:#4db33d"></i><span>MongoDB</span></div>
+            <div class="tech-tile"><i class="fab fa-html5" style="color:#e34f26"></i><span>HTML5</span></div>
+            <div class="tech-tile"><i class="fab fa-css3-alt" style="color:#1572b6"></i><span>CSS3</span></div>
+            <div class="tech-tile"><i class="fab fa-js" style="color:#f7df1e"></i><span>JavaScript</span></div>
+            <div class="tech-tile"><i class="fab fa-git-alt" style="color:#f05033"></i><span>Git</span></div>
+            <div class="tech-tile"><i class="fab fa-github"></i><span>GitHub</span></div>
+            <div class="tech-tile"><i class="fas fa-chart-bar" style="color:#4dabf7"></i><span>NumPy</span></div>
+          </div>
+          <div class="sk-group-title" style="margin-top:1.8rem">Other Skills</div>
+          <div class="oskills" style="margin-top:.5rem">
+            <span class="osk">Excel</span><span class="osk">PowerPoint</span><span class="osk">Word</span>
+            <span class="osk">CCNA Fundamentals</span><span class="osk">CEH Basics</span>
+            <span class="osk">REST APIs</span><span class="osk">JWT Auth</span><span class="osk">Agile / Scrum</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="div-line"></div>
+
+  <!-- ═══════════ TOOLS + TESTIMONIAL + CONTACT CTA ═══════════ -->
+  <section class="section section-alt tools-test-row">
+    <div class="sec-inner tools-test-inner">
+
+      <!-- Tools I Use -->
+      <div class="tools-col reveal">
+        <div class="sec-label">Tools I Use</div>
+        <div class="tools-grid">
+          <div class="tool-ico figma"><i class="fab fa-figma"></i></div>
+          <div class="tool-ico ps" title="Photoshop"><span style="font-family:serif;font-weight:900;font-size:1.1rem;color:#31a8ff">Ps</span></div>
+          <div class="tool-ico ai" title="Illustrator"><span style="font-family:serif;font-weight:900;font-size:1.1rem;color:#ff9a00">Ai</span></div>
+          <div class="tool-ico xd" title="XD"><span style="font-weight:900;font-size:1.1rem;color:#ff61f6">Xd</span></div>
+          <div class="tool-ico vscode" title="VS Code"><i class="fas fa-code" style="color:#007acc"></i></div>
+          <div class="tool-ico git" title="Git"><i class="fab fa-git-alt" style="color:#f05033"></i></div>
+          <div class="tool-ico node" title="Node.js"><i class="fab fa-node-js" style="color:#6cc24a"></i></div>
+          <div class="tool-ico postman" title="Postman"><i class="fas fa-paper-plane" style="color:#ff6c37"></i></div>
+        </div>
+      </div>
+
+      <!-- Testimonial -->
+      <div class="test-col reveal" style="transition-delay:.1s">
+        <div class="sec-label">What Clients Say</div>
+        <div class="testimonial-card">
+          <div class="test-quote">"</div>
+          <p class="test-body">Naveen is an exceptional developer! He understood our vision perfectly and delivered a product that exceeded our expectations.</p>
+          <div class="test-author">
+            <div class="test-avatar">RS</div>
+            <div>
+              <div class="test-name">Rohit Sharma</div>
+              <div class="test-role">CEO, Elevate Studio</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Let's Build CTA -->
+      <div class="cta-col reveal" style="transition-delay:.2s">
+        <h3 class="cta-title">LET'S BUILD SOMETHING<br>AMAZING TOGETHER</h3>
+        <a href="#contact" class="btn-gold-lg">LET'S CONNECT <i class="fas fa-arrow-right"></i></a>
+        <div class="cta-contacts">
+          <div class="cta-ci"><i class="fas fa-envelope"></i> naveensivaradjane@gmail.com</div>
+          <div class="cta-ci"><i class="fas fa-phone"></i> +91 80725 86502</div>
+          <div class="cta-ci"><i class="fas fa-location-dot"></i> Pondicherry, India</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="div-line"></div>
+
+  <!-- ═══════════ EDUCATION ═══════════ -->
+  <section id="education" class="section">
+    <div class="sec-inner">
+      <div class="sec-hdr reveal">
+        <div class="sec-label">Education</div>
+        <h2 class="sec-title">My <span class="g">Academic</span> Journey.</h2>
+      </div>
+      <div class="edu-layout">
+        <div class="edu-timeline">
+          <div class="edu-item reveal">
+            <div class="edu-dot"></div>
+            <div class="edu-period">Jun 2024 – Jul 2026</div>
+            <div class="edu-degree">Master of Computer Applications (MCA)</div>
+            <div class="edu-inst">Sri Manakula Vinayagar Engineering College, Pondicherry &bull; CGPA: 8.76 / 10</div>
+            <span class="edu-badge eb-on">Ongoing</span>
+          </div>
+          <div class="edu-item reveal" style="transition-delay:.1s">
+            <div class="edu-dot"></div>
+            <div class="edu-period">Jun 2021 – May 2024</div>
+            <div class="edu-degree">Bachelor of Science — Computer Science</div>
+            <div class="edu-inst">Sri Manakula Vinayagar Engineering College, Pondicherry &bull; CGPA: 7.94 / 10</div>
+            <span class="edu-badge eb-done">Completed</span>
+          </div>
+          <div class="edu-item reveal" style="transition-delay:.2s">
+            <div class="edu-dot"></div>
+            <div class="edu-period">Jan 2026 – Present</div>
+            <div class="edu-degree">Software Developer Intern</div>
+            <div class="edu-inst">Viyashra Group of Companies, Pondicherry</div>
+            <span class="edu-badge eb-active">Active &bull; 6+ Months</span>
+          </div>
+        </div>
+        <div class="certs-wrap reveal" style="transition-delay:.15s">
+          <div class="certs-title">✦ Certifications &amp; Achievements</div>
+          <div class="cert-list">
+            <div class="cert-row"><span class="cert-ico">🐍</span><div><div class="cert-name">Python for Data Science</div><div class="cert-sub">NIIT</div></div></div>
+            <div class="cert-row"><span class="cert-ico">🗄️</span><div><div class="cert-name">Database Management Systems (DBMS)</div><div class="cert-sub">NPTEL</div></div></div>
+            <div class="cert-row"><span class="cert-ico">🔒</span><div><div class="cert-name">Certified Ethical Hacker (CEH) Basics</div><div class="cert-sub">EC-Council</div></div></div>
+            <div class="cert-row"><span class="cert-ico">🌐</span><div><div class="cert-name">CCNA Fundamentals</div><div class="cert-sub">Cisco Networking Academy</div></div></div>
+            <div class="cert-row"><span class="cert-ico">📊</span><div><div class="cert-name">TCS NQT</div><div class="cert-sub">Score: 74%</div></div></div>
+            <div class="cert-row"><span class="cert-ico">🚀</span><div><div class="cert-name">Smart India Hackathon</div><div class="cert-sub">Internal Hackathon Participant</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="div-line"></div>
+
+  <!-- ═══════════ CERTIFICATIONS ═══════════ -->
+  <section id="certifications" class="section section-alt">
+    <div class="sec-inner">
+      <div class="sec-hdr reveal">
+        <div class="sec-label">Certifications &amp; Achievements</div>
+        <h2 class="sec-title">What I've <span class="g">Earned.</span></h2>
+      </div>
+      <div class="cert-grid">
+        <div class="cert-card reveal" style="transition-delay:.05s"><div class="cert-card-ico">🐍</div><div class="cert-card-name">Python for Data Science</div><div class="cert-card-src">NIIT</div></div>
+        <div class="cert-card reveal" style="transition-delay:.1s"><div class="cert-card-ico">🗄️</div><div class="cert-card-name">Database Management Systems (DBMS)</div><div class="cert-card-src">NPTEL</div></div>
+        <div class="cert-card reveal" style="transition-delay:.15s"><div class="cert-card-ico">🔒</div><div class="cert-card-name">Certified Ethical Hacker (CEH) Basics</div><div class="cert-card-src">EC-Council</div></div>
+        <div class="cert-card reveal" style="transition-delay:.2s"><div class="cert-card-ico">🌐</div><div class="cert-card-name">CCNA Fundamentals</div><div class="cert-card-src">Cisco Networking Academy</div></div>
+        <div class="cert-card reveal" style="transition-delay:.25s"><div class="cert-card-ico">📊</div><div class="cert-card-name">TCS NQT</div><div class="cert-card-src">Score: 74%</div></div>
+        <div class="cert-card reveal" style="transition-delay:.3s"><div class="cert-card-ico">🚀</div><div class="cert-card-name">Smart India Hackathon</div><div class="cert-card-src">Internal Hackathon Participant</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="div-line"></div>
+
+  <!-- ═══════════ CONTACT ═══════════ -->
+  <section id="contact" class="section">
+    <div class="sec-inner" style="max-width:1000px">
+      <div class="sec-hdr reveal">
+        <div class="sec-label">Contact</div>
+        <h2 class="sec-title">Let's Build Something<br><span class="g">Amazing Together.</span></h2>
+      </div>
+      <div class="contact-layout">
+        <div class="reveal">
+          <p class="contact-tagline">Open to fresher roles in Web Development, Full Stack, or Software Engineering. I reply within 24 hours — reach out anytime.</p>
+          <div class="contact-list">
+            <a href="mailto:naveensivaradjane@gmail.com" class="cinfo">
+              <div class="cinfo-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg></div>
+              <div><div class="cinfo-lbl">Email</div><div class="cinfo-val">naveensivaradjane@gmail.com</div></div>
+            </a>
+            <a href="tel:+918072586502" class="cinfo">
+              <div class="cinfo-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 012 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+              <div><div class="cinfo-lbl">Phone</div><div class="cinfo-val">+91 80725 86502</div></div>
+            </a>
+            <a href="https://www.linkedin.com/in/naveens-583823281" target="_blank" rel="noopener" class="cinfo">
+              <div class="cinfo-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
+              <div><div class="cinfo-lbl">LinkedIn</div><div class="cinfo-val">linkedin.com/in/naveens-583823281</div></div>
+            </a>
+            <div class="cinfo">
+              <div class="cinfo-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><div class="cinfo-lbl">Location</div><div class="cinfo-val">Pondicherry, India — Remote OK</div></div>
+            </div>
+          </div>
+          <div class="soc-links">
+            <a href="https://www.linkedin.com/in/naveens-583823281" target="_blank" rel="noopener" class="soc-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="mailto:naveensivaradjane@gmail.com" class="soc-link"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://github.com/" target="_blank" rel="noopener" class="soc-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay:.15s">
           <div class="cform">
-            <div class="cfin">
-              <div class="cfrow">
-                <div class="cfd"><label for="fn">Name</label><input type="text" id="fn" placeholder="Your Name" autocomplete="name"/></div>
-                <div class="cfd"><label for="fe">Email</label><input type="email" id="fe" placeholder="your@email.com" autocomplete="email"/></div>
-              </div>
-              <div class="cfd"><label for="fs">Subject</label><input type="text" id="fs" placeholder="Job Opportunity / Collaboration"/></div>
-              <div class="cfd"><label for="fm">Message</label><textarea id="fm" rows="5" placeholder="Tell me about your opportunity..."></textarea></div>
+            <div class="form-row">
+              <div class="form-f"><label for="fn">Your Name</label><input type="text" id="fn" placeholder="Your Name" autocomplete="name"/></div>
+              <div class="form-f"><label for="fe">Your Email</label><input type="email" id="fe" placeholder="your@email.com" autocomplete="email"/></div>
             </div>
-            <button type="button" class="btn btn-c btn-full" id="cfbtn">Send Message <span class="bi">&#8594;</span></button>
-            <div class="cfok" id="cfok" role="alert">&#10003; Message sent! I&apos;ll reply within 24 hours.</div>
+            <div class="form-f"><label for="fpt">Project Type</label><input type="text" id="fpt" placeholder="Job Opportunity / Collaboration / Freelance"/></div>
+            <div class="form-f"><label for="fm">Your Message</label><textarea id="fm" rows="5" placeholder="Tell me about your opportunity..."></textarea></div>
+            <button type="button" class="btn-gold" id="cfbtn" style="width:100%;justify-content:center">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            <div class="form-success" id="cfok">✓ Message sent! I'll reply within 24 hours.</div>
+            <div class="form-error" id="cferr">✕ Please fill all fields, or email me directly at naveensivaradjane@gmail.com</div>
           </div>
         </div>
       </div>
@@ -407,36 +629,20 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-wrapper">
-      <div class="footer-brand">
-        <div class="footer-logo">NAVEEN<span class="logo-dot">.</span></div>
-        <p>Cyber Security Learner &amp; Full Stack Intern based in Puducherry, India.</p>
-      </div>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Naveen<span>.</span>S</div>
+      <div class="footer-tagline">DESIGNING WITH PURPOSE. BUILDING WITH PASSION.</div>
+      <div class="footer-copy">&copy; 2025 Naveen S &bull; All rights reserved</div>
       <div class="footer-icons">
-        <a href="mailto:naveensivaradjane@gmail.com" class="ficon email" aria-label="Email">
-          <i class="fas fa-envelope"></i>
-          <span class="ficon-glow"></span>
-        </a>
-        <a href="https://www.linkedin.com/in/naveens-583823281" target="_blank" rel="noopener" class="ficon linkedin" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-          <span class="ficon-glow"></span>
-        </a>
-        <a href="#" class="ficon github" aria-label="GitHub">
-          <i class="fab fa-github"></i>
-          <span class="ficon-glow"></span>
-        </a>
-        <a href="#" class="ficon instagram" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-          <span class="ficon-glow"></span>
-        </a>
-      </div>
-      <div class="footer-copy">
-        &copy; 2025 <span>Naveen S</span> &middot; Puducherry, India &middot; All Rights Reserved
+        <a href="mailto:naveensivaradjane@gmail.com" class="fic"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/naveens-583823281" target="_blank" rel="noopener" class="fic"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/" target="_blank" rel="noopener" class="fic"><i class="fab fa-github"></i></a>
       </div>
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+</div><!-- /main -->
+<script src="script.js"></script>
 </body>
 </html>
