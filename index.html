@@ -3,16 +3,83 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Naveen S — Full Stack Developer | MCA 2026 | Pondicherry, India"/>
-  <title>Naveen S — Full Stack Developer</title>
+
+  <!-- ── Primary SEO ── -->
+  <title>Naveen S — Full Stack Developer | MCA 2026 | Pondicherry</title>
+  <meta name="description" content="Naveen S is a Full Stack Developer (MCA 2026) based in Pondicherry, India. Specialising in React, Node.js, PHP and MySQL. Open to full-time roles and collaborations."/>
+  <meta name="keywords" content="Naveen S, Full Stack Developer, React, Node.js, PHP, MySQL, MCA, Pondicherry, India, Web Developer, Portfolio"/>
+  <meta name="author" content="Naveen S"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://naveens.dev/"/>
+
+  <!-- ── Open Graph (LinkedIn / WhatsApp / Facebook) ── -->
+  <meta property="og:type"        content="website"/>
+  <meta property="og:url"         content="https://naveens.dev/"/>
+  <meta property="og:title"       content="Naveen S — Full Stack Developer"/>
+  <meta property="og:description" content="Crafting scalable web applications with clean code and impactful design. React · Node.js · PHP · MySQL · MCA 2026."/>
+  <meta property="og:image"       content="https://naveens.dev/og-preview.jpg"/>
+  <meta property="og:image:width"  content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:locale"      content="en_IN"/>
+  <meta property="og:site_name"   content="Naveen S Portfolio"/>
+
+  <!-- ── Twitter / X Card ── -->
+  <meta name="twitter:card"        content="summary_large_image"/>
+  <meta name="twitter:title"       content="Naveen S — Full Stack Developer"/>
+  <meta name="twitter:description" content="Crafting scalable web applications with clean code and impactful design. React · Node.js · PHP · MySQL."/>
+  <meta name="twitter:image"       content="https://naveens.dev/og-preview.jpg"/>
+
+  <!-- ── JSON-LD Structured Data (Person schema) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Naveen S",
+    "jobTitle": "Full Stack Developer",
+    "description": "Full Stack Developer specialising in React, Node.js, PHP and MySQL. MCA 2026 from Sri Manakula Vinayagar Engineering College, Pondicherry.",
+    "url": "https://naveens.dev/",
+    "email": "naveensivaradjane@gmail.com",
+    "telephone": "+91-80725-86502",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pondicherry",
+      "addressCountry": "IN"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Sri Manakula Vinayagar Engineering College"
+    },
+    "knowsAbout": ["React.js", "Node.js", "PHP", "MySQL", "MongoDB", "JavaScript", "Python", "Full Stack Development"],
+    "sameAs": [
+      "https://www.linkedin.com/in/naveens-583823281",
+      "https://github.com/"
+    ]
+  }
+  </script>
+
+  <!-- ── Fonts ── -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- ── Font Awesome — loaded async so it never blocks render ── -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/></noscript>
+
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
+
+<!-- ── Skip to content (accessibility) ── -->
+<a href="#home" class="skip-link">Skip to main content</a>
+
+<!-- PAGE LOADER -->
+<div id="page-loader">
+  <div class="loader-logo">Naveen<span>.</span></div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <div class="loader-tag">// LOADING PORTFOLIO</div>
+</div>
 
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
@@ -21,20 +88,20 @@
 <button id="btt" aria-label="Back to top">BACK TO TOP ↑</button>
 
 <!-- Mobile burger -->
-<button class="mob-burger" id="burger" aria-label="Menu">
+<button class="mob-burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mob-overlay">
   <span></span><span></span><span></span>
 </button>
 
 <!-- Mobile overlay -->
 <div class="mob-overlay" id="mob-overlay">
-  <a href="#home"           class="mob-link">Home</a>
-  <a href="#about-anchor"   class="mob-link">About</a>
-  <a href="#experience"     class="mob-link">Experience</a>
-  <a href="#projects"       class="mob-link">Projects</a>
-  <a href="#skills"         class="mob-link">Skills</a>
-  <a href="#education"      class="mob-link">Education</a>
-  <a href="#certifications" class="mob-link">Certifications</a>
-  <a href="#contact"        class="mob-link">Contact</a>
+  <a href="#home"           class="mob-link"><span class="mob-num">01</span>Home</a>
+  <a href="#about-anchor"   class="mob-link"><span class="mob-num">02</span>About</a>
+  <a href="#experience"     class="mob-link"><span class="mob-num">03</span>Experience</a>
+  <a href="#projects"       class="mob-link"><span class="mob-num">04</span>Projects</a>
+  <a href="#skills"         class="mob-link"><span class="mob-num">05</span>Skills</a>
+  <a href="#education"      class="mob-link"><span class="mob-num">06</span>Education</a>
+  <a href="#certifications" class="mob-link"><span class="mob-num">07</span>Certifications</a>
+  <a href="#contact"        class="mob-link"><span class="mob-num">08</span>Contact</a>
 </div>
 
 <!-- ═══════════════════ TOP NAVBAR ═══════════════════ -->
@@ -48,7 +115,7 @@
 
     <!-- Nav links -->
     <div class="nav-links">
-      <a href="#home"           class="nav-link active">HOME</a>
+      <a href="#home"           class="nav-link active" aria-current="page">HOME</a>
       <a href="#about-anchor"   class="nav-link">ABOUT</a>
       <a href="#experience"     class="nav-link">WORK</a>
       <a href="#projects"       class="nav-link">PROJECTS</a>
@@ -59,6 +126,9 @@
     <!-- Right side -->
     <div class="nav-right">
       <div class="nav-tag"><span>//</span> BASED IN PONDICHERRY</div>
+      <button id="theme-toggle" class="theme-btn" aria-label="Toggle light mode" title="Toggle light/dark mode">
+        <span class="theme-icon">☀️</span>
+      </button>
       <a href="#contact" class="nav-cta">LET'S TALK <i class="fas fa-arrow-right"></i></a>
     </div>
   </div>
@@ -98,7 +168,7 @@
 
       <div class="hero-btns">
         <a href="#projects" class="btn-gold"><i class="fas fa-arrow-up-right-from-square"></i> View My Work</a>
-        <a href="NAVEEN_S_RESUME.pdf" download class="btn-outline">About Me</a>
+        <a href="NAVEEN_S_RESUME.pdf" download id="cv-btn" class="btn-outline"><i class="fas fa-download"></i> Download CV</a>
       </div>
 
       <div class="hero-avail">
@@ -116,7 +186,7 @@
 
     <!-- CENTER — Photo -->
     <div class="hero-center">
-      <div class="hero-photo-wrap">
+      <div class="hero-photo-wrap" role="img" aria-label="Naveen S portrait photo">
         <div class="hero-halo"></div>
         <div class="hero-ring"></div>
 
@@ -178,6 +248,12 @@
       </div>
     </div>
 
+    <!-- SCROLL INDICATOR -->
+    <a href="#about-anchor" class="scroll-indicator">
+      <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+      <span>SCROLL</span>
+    </a>
+
     <!-- BOTTOM — About + Tech Stack -->
     <div class="hero-bottom" id="about-anchor">
       <!-- About -->
@@ -205,7 +281,7 @@
             <div class="tech-group-head">Backend</div>
             <div class="tech-chips">
               <span class="tech-chip"><i class="fab fa-node-js"></i> Node.js</span>
-              <span class="tech-chip">Exe Express.js</span>
+              <span class="tech-chip">⚡ Express.js</span>
               <span class="tech-chip"><i class="fab fa-php"></i> PHP</span>
             </div>
             <div class="tech-group-head" style="margin-top:.65rem">Databases</div>
@@ -236,6 +312,7 @@
 
   <!-- ═══════════ EXPERIENCE ═══════════ -->
   <section id="experience" class="section section-alt">
+    <div class="sec-num-label">02</div>
     <div class="sec-inner">
       <div class="sec-hdr reveal">
         <div class="sec-label">Experience</div>
@@ -288,16 +365,26 @@
 
   <!-- ═══════════ PROJECTS ═══════════ -->
   <section id="projects" class="section">
+    <div class="sec-num-label">03</div>
     <div class="sec-inner" style="max-width:100%">
       <div class="sec-hdr reveal">
         <div class="sec-label">Featured Projects</div>
         <h2 class="sec-title">Things I've <span class="g">Built.</span></h2>
         <a href="#" class="sec-view-all">VIEW ALL PROJECTS <i class="fas fa-arrow-up-right-from-square"></i></a>
       </div>
+
+      <!-- Filter Tabs -->
+      <div class="pj-filters reveal">
+        <button class="pj-filter active" data-filter="all">All</button>
+        <button class="pj-filter" data-filter="mern">MERN</button>
+        <button class="pj-filter" data-filter="php">PHP</button>
+        <button class="pj-filter" data-filter="python">Python</button>
+      </div>
+
       <div class="projects-grid">
 
         <!-- P1 -->
-        <div class="pj reveal" style="transition-delay:.05s">
+        <div class="pj reveal" data-tags="mern" style="transition-delay:.05s">
           <div class="pj-banner pj-bg1">
             <div class="pj-banner-num">01</div>
             <div class="pj-banner-ext"><i class="fas fa-arrow-up-right-from-square"></i></div>
@@ -310,13 +397,17 @@
             <div class="pj-desc">Scalable multi-tenant HRMS using MongoDB, Express.js, React.js and Node.js. RESTful APIs for employee management, attendance, performance. JWT auth and role-based access.</div>
             <div class="pj-foot">
               <div class="pj-stack"><span>React</span><span>Node.js</span><span>MongoDB</span><span>JWT</span></div>
-              <span class="pj-btn">VIEW CASE STUDY <i class="fas fa-arrow-up-right-from-square"></i></span>
+              <div class="pj-actions">
+                <a href="https://github.com/" target="_blank" rel="noopener" class="pj-icon-btn" title="View on GitHub" aria-label="People Pulse on GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" rel="noopener" class="pj-icon-btn pj-icon-live" title="Live Demo" aria-label="People Pulse live demo"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                <span class="pj-btn">VIEW CASE STUDY <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- P2 -->
-        <div class="pj reveal" style="transition-delay:.1s">
+        <div class="pj reveal" data-tags="php" style="transition-delay:.1s">
           <div class="pj-banner pj-bg2">
             <div class="pj-banner-num">02</div>
             <div class="pj-banner-ext"><i class="fas fa-arrow-up-right-from-square"></i></div>
@@ -329,13 +420,17 @@
             <div class="pj-desc">Full-stack immigration portal with dashboard, document upload, KPI tracking and communication modules. Normalized MySQL schemas, role-based auth for admin, staff and student.</div>
             <div class="pj-foot">
               <div class="pj-stack"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Bootstrap</span></div>
-              <span class="pj-btn">VIEW CASE STUDY <i class="fas fa-arrow-up-right-from-square"></i></span>
+              <div class="pj-actions">
+                <a href="https://github.com/" target="_blank" rel="noopener" class="pj-icon-btn" title="View on GitHub" aria-label="Immigration Portal on GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" rel="noopener" class="pj-icon-btn pj-icon-live" title="Live Demo" aria-label="Immigration Portal live demo"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                <span class="pj-btn">VIEW CASE STUDY <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- P3 -->
-        <div class="pj reveal" style="transition-delay:.15s">
+        <div class="pj reveal" data-tags="php" style="transition-delay:.15s">
           <div class="pj-banner pj-bg3">
             <div class="pj-banner-num">03</div>
             <div class="pj-banner-ext"><i class="fas fa-arrow-up-right-from-square"></i></div>
@@ -348,7 +443,11 @@
             <div class="pj-desc">Complete tailoring order management platform with customer and admin modules. Optimized relational database with indexing, real-time order tracking and secure role-based authentication.</div>
             <div class="pj-foot">
               <div class="pj-stack"><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
-              <span class="pj-btn">VIEW CASE STUDY <i class="fas fa-arrow-up-right-from-square"></i></span>
+              <div class="pj-actions">
+                <a href="https://github.com/" target="_blank" rel="noopener" class="pj-icon-btn" title="View on GitHub" aria-label="E-Tailoring on GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" rel="noopener" class="pj-icon-btn pj-icon-live" title="Live Demo" aria-label="E-Tailoring live demo"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                <span class="pj-btn">VIEW CASE STUDY <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
           </div>
         </div>
@@ -361,6 +460,7 @@
 
   <!-- ═══════════ ABOUT + EXPERTISE ═══════════ -->
   <section id="about-section" class="section section-alt">
+    <div class="sec-num-label">04</div>
     <div class="sec-inner about-expertise-layout">
       <!-- About column -->
       <div class="about-col reveal">
@@ -400,6 +500,7 @@
 
   <!-- ═══════════ SKILLS ═══════════ -->
   <section id="skills" class="section">
+    <div class="sec-num-label">05</div>
     <div class="sec-inner">
       <div class="sec-hdr reveal">
         <div class="sec-label">Tech Stack</div>
@@ -451,6 +552,32 @@
           </div>
         </div>
       </div>
+
+      <!-- GitHub Activity Heatmap -->
+      <div class="gh-activity reveal">
+        <div class="gh-activity-hdr">
+          <span class="sk-group-title" style="margin:0">// GitHub Activity</span>
+          <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener" class="gh-link">
+            <i class="fab fa-github"></i> View Profile
+          </a>
+        </div>
+        <div class="gh-cards">
+          <img
+            src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=dark&bg_color=0d0b07&title_color=c49a2a&text_color=c8c0a8&icon_color=c49a2a&border_color=1d1b12&hide_border=false&count_private=true"
+            alt="Naveen S GitHub Stats"
+            class="gh-img gh-stats"
+            loading="lazy"
+          />
+          <img
+            src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_GITHUB_USERNAME&theme=dark&background=0d0b07&stroke=1d1b12&ring=c49a2a&fire=e0bc50&currStreakLabel=c49a2a&sideLabels=c8c0a8&dates=7a7260&border=1d1b12"
+            alt="Naveen S GitHub Streak"
+            class="gh-img gh-streak"
+            loading="lazy"
+          />
+        </div>
+        <div class="gh-note">Replace <code>YOUR_GITHUB_USERNAME</code> in the HTML with your real GitHub username to activate these cards.</div>
+      </div>
+
     </div>
   </section>
 
@@ -509,6 +636,7 @@
 
   <!-- ═══════════ EDUCATION ═══════════ -->
   <section id="education" class="section">
+    <div class="sec-num-label">06</div>
     <div class="sec-inner">
       <div class="sec-hdr reveal">
         <div class="sec-label">Education</div>
@@ -557,6 +685,7 @@
 
   <!-- ═══════════ CERTIFICATIONS ═══════════ -->
   <section id="certifications" class="section section-alt">
+    <div class="sec-num-label">07</div>
     <div class="sec-inner">
       <div class="sec-hdr reveal">
         <div class="sec-label">Certifications &amp; Achievements</div>
@@ -577,6 +706,7 @@
 
   <!-- ═══════════ CONTACT ═══════════ -->
   <section id="contact" class="section">
+    <div class="sec-num-label">08</div>
     <div class="sec-inner" style="max-width:1000px">
       <div class="sec-hdr reveal">
         <div class="sec-label">Contact</div>
@@ -630,19 +760,136 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">Naveen<span>.</span>S</div>
-      <div class="footer-tagline">DESIGNING WITH PURPOSE. BUILDING WITH PASSION.</div>
-      <div class="footer-copy">&copy; 2025 Naveen S &bull; All rights reserved</div>
-      <div class="footer-icons">
-        <a href="mailto:naveensivaradjane@gmail.com" class="fic"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/naveens-583823281" target="_blank" rel="noopener" class="fic"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/" target="_blank" rel="noopener" class="fic"><i class="fab fa-github"></i></a>
+    <!-- Top glow bar -->
+    <div class="ft-glow-bar"></div>
+
+    <!-- Main footer body -->
+    <div class="ft-body">
+
+      <!-- Col 1 — Brand -->
+      <div class="ft-col ft-brand">
+        <a href="#home" class="ft-logo">
+          <div class="ft-logo-box">N</div>
+          <span>NAVEEN<span class="ft-dot">.</span></span>
+        </a>
+        <p class="ft-bio">
+          Full Stack Developer crafting scalable, user-focused digital products
+          from Pondicherry, India. Open to full-time roles &amp; collaborations.
+        </p>
+        <div class="ft-avail">
+          <span class="ft-avail-dot"></span>
+          Available for opportunities
+        </div>
+        <!-- Social row -->
+        <div class="ft-socials">
+          <a href="https://www.linkedin.com/in/naveens-583823281" target="_blank" rel="noopener" class="ft-soc" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/" target="_blank" rel="noopener" class="ft-soc" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:naveensivaradjane@gmail.com" class="ft-soc" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="tel:+918072586502" class="ft-soc" aria-label="Phone">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
       </div>
+
+      <!-- Col 2 — Quick Links -->
+      <div class="ft-col">
+        <div class="ft-col-title">Quick Links</div>
+        <nav class="ft-nav" aria-label="Footer navigation">
+          <a href="#home"           class="ft-link"><span>//</span> Home</a>
+          <a href="#about-anchor"   class="ft-link"><span>//</span> About</a>
+          <a href="#experience"     class="ft-link"><span>//</span> Experience</a>
+          <a href="#projects"       class="ft-link"><span>//</span> Projects</a>
+          <a href="#skills"         class="ft-link"><span>//</span> Skills</a>
+          <a href="#education"      class="ft-link"><span>//</span> Education</a>
+          <a href="#contact"        class="ft-link"><span>//</span> Contact</a>
+        </nav>
+      </div>
+
+      <!-- Col 3 — Tech Stack -->
+      <div class="ft-col">
+        <div class="ft-col-title">Tech Stack</div>
+        <div class="ft-tags">
+          <span class="ft-tag">React.js</span>
+          <span class="ft-tag">Node.js</span>
+          <span class="ft-tag">PHP</span>
+          <span class="ft-tag">MySQL</span>
+          <span class="ft-tag">MongoDB</span>
+          <span class="ft-tag">JavaScript</span>
+          <span class="ft-tag">Python</span>
+          <span class="ft-tag">Express.js</span>
+          <span class="ft-tag">REST APIs</span>
+          <span class="ft-tag">JWT Auth</span>
+        </div>
+      </div>
+
+      <!-- Col 4 — Contact -->
+      <div class="ft-col">
+        <div class="ft-col-title">Get In Touch</div>
+        <div class="ft-contacts">
+          <a href="mailto:naveensivaradjane@gmail.com" class="ft-contact-row">
+            <div class="ft-ci"><i class="fas fa-envelope"></i></div>
+            <span>naveensivaradjane@gmail.com</span>
+          </a>
+          <a href="tel:+918072586502" class="ft-contact-row">
+            <div class="ft-ci"><i class="fas fa-phone"></i></div>
+            <span>+91 80725 86502</span>
+          </a>
+          <div class="ft-contact-row">
+            <div class="ft-ci"><i class="fas fa-location-dot"></i></div>
+            <span>Pondicherry, India — Remote OK</span>
+          </div>
+        </div>
+        <a href="NAVEEN_S_RESUME.pdf" download id="ft-cv-btn" class="ft-download-btn">
+          <i class="fas fa-download"></i> Download CV
+        </a>
+      </div>
+
     </div>
+
+    <!-- Divider -->
+    <div class="ft-divider"></div>
+
+    <!-- Bottom bar -->
+    <div class="ft-bottom">
+      <div class="ft-copy">
+        &copy; 2025 <strong>Naveen S</strong> &bull; All rights reserved
+      </div>
+      <div class="ft-motto">
+        DESIGNING WITH PURPOSE &nbsp;·&nbsp; BUILDING WITH PASSION
+      </div>
+      <a href="#home" class="ft-btt" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i> BACK TO TOP
+      </a>
+    </div>
+
   </footer>
 
 </div><!-- /main -->
+
+<!-- ── Mobile sticky contact bar ── -->
+<div id="mob-contact-bar" role="navigation" aria-label="Quick contact">
+  <a href="mailto:naveensivaradjane@gmail.com" class="mob-cbar-btn" aria-label="Send email">
+    <i class="fas fa-envelope"></i>
+    <span>Email Me</span>
+  </a>
+  <div class="mob-cbar-div"></div>
+  <a href="https://www.linkedin.com/in/naveens-583823281" target="_blank" rel="noopener" class="mob-cbar-btn" aria-label="LinkedIn profile">
+    <i class="fab fa-linkedin-in"></i>
+    <span>LinkedIn</span>
+  </a>
+  <div class="mob-cbar-div"></div>
+  <a href="tel:+918072586502" class="mob-cbar-btn" aria-label="Call Naveen">
+    <i class="fas fa-phone"></i>
+    <span>Call</span>
+  </a>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>
