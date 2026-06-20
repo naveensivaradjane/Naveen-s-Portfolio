@@ -5,7 +5,7 @@
   'use strict';
 
   /* ── EmailJS config — replace these 3 values ── */
-  var EJ_PK  = 'YOUR_PUBLIC_KEY';
+  var EJ_PK = 'YOUR_PUBLIC_KEY';
   var EJ_SID = 'YOUR_SERVICE_ID';
   var EJ_TID = 'YOUR_TEMPLATE_ID';
 
@@ -46,7 +46,7 @@
 
   /* ── CUSTOM CURSOR ── */
   function initCursor() {
-    var cur  = document.getElementById('cursor');
+    var cur = document.getElementById('cursor');
     var ring = document.getElementById('cursor-ring');
     if (!cur || !ring) return;
     var mx = 0, my = 0, rx = 0, ry = 0;
@@ -68,10 +68,10 @@
   }
 
   function initHoverCursor() {
-    var cur  = document.getElementById('cursor');
+    var cur = document.getElementById('cursor');
     var ring = document.getElementById('cursor-ring');
     if (!cur || !ring) return;
-    var sel = 'a,button,.pj,.cert-card,.cert-row,.cinfo,.stat-card,.tech-tile,.exp-card,.edu-item,.hstat,.avail-chip,.tech-chip,.osk,.oskill,.exp-tile,.tool-ico,.testimonial-card';
+    var sel = 'a,button,.pj,.cert-card,.cert-row,.cinfo,.stat-card,.tech-tile,.exp-card,.edu-item,.hstat,.avail-chip,.tech-chip,.osk,.oskill,.exp-tile,.tool-ico';
     document.querySelectorAll(sel).forEach(function (el) {
       el.addEventListener('mouseenter', function () { cur.classList.add('big'); ring.classList.add('big'); });
       el.addEventListener('mouseleave', function () { cur.classList.remove('big'); ring.classList.remove('big'); });
@@ -82,23 +82,23 @@
      Single rAF loop replaces two separate scroll listeners.
      Cuts duplicate layout reads and improves scroll perf.   ── */
   function initScrollWatcher() {
-    var bar   = document.getElementById('prog');
-    var nav   = document.getElementById('navbar');
-    var btt   = document.getElementById('btt');
+    var bar = document.getElementById('prog');
+    var nav = document.getElementById('navbar');
+    var btt = document.getElementById('btt');
     var mcbar = document.getElementById('mob-contact-bar');
     var ticking = false;
     var lastY = 0;
 
     function update() {
       ticking = false;
-      var y     = window.scrollY;
+      var y = window.scrollY;
       var total = document.documentElement.scrollHeight - window.innerHeight;
       /* progress bar */
-      if (bar)   bar.style.width = (total > 0 ? (y / total) * 100 : 0) + '%';
+      if (bar) bar.style.width = (total > 0 ? (y / total) * 100 : 0) + '%';
       /* navbar solid */
-      if (nav)   nav.classList.toggle('solid', y > 40);
+      if (nav) nav.classList.toggle('solid', y > 40);
       /* back to top */
-      if (btt)   btt.classList.toggle('show', y > 500);
+      if (btt) btt.classList.toggle('show', y > 500);
       /* mobile contact bar — show after hero */
       if (mcbar) mcbar.classList.toggle('visible', y > window.innerHeight * 0.6);
       lastY = y;
@@ -113,7 +113,7 @@
 
   /* ── DARK / LIGHT THEME TOGGLE ── */
   function initThemeToggle() {
-    var btn  = document.getElementById('theme-toggle');
+    var btn = document.getElementById('theme-toggle');
     var icon = btn ? btn.querySelector('.theme-icon') : null;
     if (!btn) return;
     /* Restore saved preference */
@@ -131,7 +131,7 @@
   /* ── PROJECT FILTER TABS ── */
   function initProjectFilters() {
     var filters = document.querySelectorAll('.pj-filter');
-    var cards   = document.querySelectorAll('.pj[data-tags]');
+    var cards = document.querySelectorAll('.pj[data-tags]');
     if (!filters.length) return;
 
     filters.forEach(function (btn) {
@@ -181,7 +181,7 @@
       spark.x = e.clientX;
       spark.y = e.clientY;
       spark.el.style.left = spark.x + 'px';
-      spark.el.style.top  = spark.y + 'px';
+      spark.el.style.top = spark.y + 'px';
       spark.el.style.opacity = '0.7';
       spark.el.style.transform = 'translate(-50%,-50%) scale(1)';
       clearTimeout(spark._t);
@@ -336,7 +336,7 @@
 
   /* ── MOBILE MENU ── */
   function initMobileMenu() {
-    var burger  = document.getElementById('burger');
+    var burger = document.getElementById('burger');
     var overlay = document.getElementById('mob-overlay');
     if (!burger) return;
 
@@ -378,10 +378,10 @@
   /* ── BACK TO TOP ── */
   function initBackToTop() {
     /* visibility of #btt handled by initScrollWatcher */
-    var btt   = document.getElementById('btt');
+    var btt = document.getElementById('btt');
     var ftBtt = document.querySelector('.ft-btt');
     function goTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-    if (btt)   btt.addEventListener('click', goTop);
+    if (btt) btt.addEventListener('click', goTop);
     if (ftBtt) ftBtt.addEventListener('click', function (e) { e.preventDefault(); goTop(); });
   }
 
@@ -401,7 +401,7 @@
             showToast('Resume coming soon! Drop me a message below.');
           }
         };
-        xhr.onerror = function () {};
+        xhr.onerror = function () { };
         xhr.send();
       });
     });
@@ -491,11 +491,11 @@
     var btns = document.querySelectorAll('.btn-gold, .nav-cta, .btn-gold-lg');
     btns.forEach(function (btn) {
       btn.addEventListener('mousemove', function (e) {
-        var r   = btn.getBoundingClientRect();
-        var cx  = r.left + r.width  / 2;
-        var cy  = r.top  + r.height / 2;
-        var dx  = (e.clientX - cx) * 0.28;
-        var dy  = (e.clientY - cy) * 0.28;
+        var r = btn.getBoundingClientRect();
+        var cx = r.left + r.width / 2;
+        var cy = r.top + r.height / 2;
+        var dx = (e.clientX - cx) * 0.28;
+        var dy = (e.clientY - cy) * 0.28;
         btn.style.transform = 'translate(' + dx + 'px,' + dy + 'px)';
       });
       btn.addEventListener('mouseleave', function () {
@@ -507,7 +507,7 @@
   /* ── CONTACT FORM ── */
   function initContactForm() {
     var btn = document.getElementById('cfbtn');
-    var ok  = document.getElementById('cfok');
+    var ok = document.getElementById('cfok');
     var err = document.getElementById('cferr');
     if (!btn) return;
     btn.addEventListener('click', function () {
@@ -517,16 +517,20 @@
       btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i>&nbsp; Sending…';
       btn.disabled = true; hide(ok); hide(err);
       if (typeof emailjs !== 'undefined' && EJ_PK !== 'YOUR_PUBLIC_KEY') {
-        emailjs.send(EJ_SID, EJ_TID, { from_name: fn, from_email: fe, subject: fpt||'Portfolio Contact', message: fm }).then(function () {
-          ['fn','fe','fpt','fm'].forEach(function (id) { clear(id); });
+        emailjs.send(EJ_SID, EJ_TID, { from_name: fn, from_email: fe, subject: fpt || 'Portfolio Contact', message: fm }).then(function () {
+          ['fn', 'fe', 'fpt', 'fm'].forEach(function (id) { clear(id); });
           reset(btn, orig); show(ok); setTimeout(function () { hide(ok); }, 5500);
         }, function () { reset(btn, orig); show(err); setTimeout(function () { hide(err); }, 7000); });
       } else {
         setTimeout(function () {
           reset(btn, orig);
-          err.textContent = '✕ EmailJS not configured yet. Email me directly: naveensivaradjane@gmail.com';
-          show(err); setTimeout(function () { hide(err); }, 7000);
-        }, 800);
+          var subject = encodeURIComponent(fpt || 'Portfolio Contact — ' + fn);
+          var body = encodeURIComponent(fm + '\n\n— ' + fn + ' (' + fe + ')');
+          window.location.href = 'mailto:naveensivaradjane@gmail.com?subject=' + subject + '&body=' + body;
+          ['fn', 'fe', 'fpt', 'fm'].forEach(function (id) { clear(id); });
+          ok.textContent = '✓ Opening your email app — just hit send!';
+          show(ok); setTimeout(function () { hide(ok); ok.textContent = "✓ Message sent! I'll reply within 24 hours."; }, 6000);
+        }, 600);
       }
     });
     function val(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; }
@@ -540,13 +544,13 @@
   /* ── HERO TILT ── */
   (function initHeroTilt() {
     var frame = document.querySelector('.hero-photo-frame');
-    var halo  = document.querySelector('.hero-halo');
+    var halo = document.querySelector('.hero-halo');
     if (!frame) return;
     document.addEventListener('mousemove', function (e) {
-      var cx = window.innerWidth/2, cy = window.innerHeight/2;
-      var rx = (e.clientY-cy)/cy*-3, ry = (e.clientX-cx)/cx*3;
-      frame.style.transform = 'perspective(900px) rotateX('+rx+'deg) rotateY('+ry+'deg)';
-      if (halo) halo.style.transform = 'translateX(-50%) translate('+ry*2+'px,'+rx*2+'px)';
+      var cx = window.innerWidth / 2, cy = window.innerHeight / 2;
+      var rx = (e.clientY - cy) / cy * -3, ry = (e.clientX - cx) / cx * 3;
+      frame.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)';
+      if (halo) halo.style.transform = 'translateX(-50%) translate(' + ry * 2 + 'px,' + rx * 2 + 'px)';
     });
     document.addEventListener('mouseleave', function () {
       frame.style.transform = '';
@@ -558,8 +562,8 @@
   document.querySelectorAll('.pj').forEach(function (card) {
     card.addEventListener('mousemove', function (e) {
       var r = card.getBoundingClientRect();
-      var x = (e.clientX-r.left)/r.width-.5, y = (e.clientY-r.top)/r.height-.5;
-      card.style.transform = 'translateY(-8px) perspective(600px) rotateY('+x*6+'deg) rotateX('+(-y*4)+'deg)';
+      var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      card.style.transform = 'translateY(-8px) perspective(600px) rotateY(' + x * 6 + 'deg) rotateX(' + (-y * 4) + 'deg)';
     });
     card.addEventListener('mouseleave', function () { card.style.transform = ''; });
   });
